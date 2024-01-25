@@ -1,1 +1,13 @@
-<h1 class="text-3xl font-bold underline text-center">Hello world!</h1>
+<header>
+  <h1 class="text-3xl font-bold underline text-center">Hello world!</h1>
+</header>
+
+<main>
+  <app-todo-group
+    [index]="i"
+    [todoGroup]="group"
+    *ngFor="let group of todoGroups;
+    let i = index"
+    ></app-todo-group>
+</main>
+

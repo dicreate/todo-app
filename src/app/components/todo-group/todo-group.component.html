@@ -1,3 +1,7 @@
 <h2>{{ todoGroup.title }}</h2>
 
-<app-todo-item [index]="i" [todoItem]="item" *ngFor="let item of todoGroup.items; let i = index;"></app-todo-item>
+<ng-container *ngSwitch="todoGroup.items">
+  <app-item-not-started [ngSwitch]="'not_started'"></app-item-not-started>
+  <app-item-in-progress [ngSwitch]="'in_progress'"></app-item-in-progress>
+  <app-item-done [ngSwitch]="'done'"></app-item-done>
+</ng-container>

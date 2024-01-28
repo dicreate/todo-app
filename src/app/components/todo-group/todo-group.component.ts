@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoGroup } from '../../models/todo-group';
+import { ItemDoneComponent } from '../item-done/item-done.component';
+import { ItemInProgressComponent } from '../item-in-progress/item-in-progress.component';
+import { ItemNotStartedComponent } from '../item-not-started/item-not-started.component';
 
 @Component({
   selector: 'app-todo-group',
   standalone: true,
-  imports: [CommonModule, TodoItemComponent],
+  imports: [CommonModule, ItemDoneComponent, ItemInProgressComponent, ItemNotStartedComponent],
   templateUrl: './todo-group.component.html',
   styleUrl: './todo-group.component.css'
 })

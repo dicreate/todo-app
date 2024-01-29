@@ -1,9 +1,20 @@
-<main>
-  <app-todo-group
-    [index]="i"
-    [todoGroup]="group"
-    *ngFor="let group of todoGroups;
-    let i = index"
-    ></app-todo-group>
-</main>
+<div class="m-4">
+  <main>
+    <div class="mx-auto my-10 w-4/12 flex flex-col gap-8 justify-center items-center">
+      <button
+        (click)="addGroup()"
+        class="block bg-gray-300 outline-none rounded-2xl transition-all ease-in-out delay-30 hover:scale-105 active:scale-110 text-2xl font-norma0l p-2"
+      >
+        Добавить группу
+      </button>
+    </div>
+    <app-todo-group
+      [index]="i"
+      [todoGroup]="group"
+      *ngFor="let group of todoGroups;
+      let i = index"
+      ></app-todo-group>
+  </main>
+</div>
+
 

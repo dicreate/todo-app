@@ -35,4 +35,13 @@ export class AppComponent {
     },
   ]
   }
+
+  public addGroup():void {
+    let tempGroup: TodoGroup = {
+      title: '',
+      items: []
+    }
+
+    this.todoGroups.push(tempGroup)
+  }
 }

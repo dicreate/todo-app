@@ -1,11 +1,31 @@
-<div class="mt-10 w-4/12 my-12 mx-auto">
+<div class="mt-10 w-5/12 my-12 mx-auto">
   <div class="text-center mb-5">
-    <h2 class="font-bold">{{ todoGroup.title }}</h2>
+    <div class="flex gap-4 justify-center items-center">
+      @if(isShowTitle) {
+        <h2 class="font-bold text-2xl leading-10">{{ todoGroup.title }}</h2>
+        <button
+        (click)="isShowTitle = !isShowTitle"
+        class="bg-gray-300 outline-none rounded-2xl transition-all ease-in-out delay-300 hover:scale-105 active:scale-110 text-lg font-normal p-2"
+        >
+          Ред.
+        </button>
+      } @else {
+        <input
+          class="outline-none text-lg font-medium py-2 px-5 border-b-zinc-500 border-b-2"
+          type="text"
+          [(ngModel)]="todoGroup.title"
+          (blur)="isShowTitle = !isShowTitle"
+          (keyup.enter)="isShowTitle = !isShowTitle"
+          placeholder="Введите название группы ..."
+        >
+      }
+    </div>
     <div class="w-full h-0.5 bg-gray-400"></div>
   </div>
 
   <div class="flex flex-col gap-4 justify-center items-center">
-    <ng-container *ngFor="let item of todoGroup.items; let i = index">
+   <!--  <ng-container *ngFor="let item of todoGroup.items; let i = index"> -->
+    @for (item of todoGroup.items; let i = $index; track i) {
       <ng-container [ngSwitch]="item.status">
         <app-item-not-started
           [todoItem]="item"
@@ -26,7 +46,8 @@
         >
         </app-item-done>
       </ng-container>
-    </ng-container>
+    }
+    <!-- </ng-container> -->
   </div>
 </div>
 

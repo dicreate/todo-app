@@ -5,11 +5,26 @@
   </div>
 
   <div class="flex flex-col gap-4 justify-center items-center">
-    <ng-container *ngFor="let item of todoGroup.items">
+    <ng-container *ngFor="let item of todoGroup.items; let i = index">
       <ng-container [ngSwitch]="item.status">
-        <app-item-not-started [todoItem]="item" *ngSwitchCase="'not_started'"></app-item-not-started>
-        <app-item-in-progress [todoItem]="item" *ngSwitchCase="'in_progress'"></app-item-in-progress>
-        <app-item-done [todoItem]="item" *ngSwitchCase="'done'"></app-item-done>
+        <app-item-not-started
+          [todoItem]="item"
+          *ngSwitchCase="'not_started'"
+          [index]="i"
+        >
+        </app-item-not-started>
+        <app-item-in-progress
+          [todoItem]="item"
+          *ngSwitchCase="'in_progress'"
+          [index]="i"
+        >
+        </app-item-in-progress>
+        <app-item-done
+          [todoItem]="item"
+          *ngSwitchCase="'done'"
+          [index]="i"
+        >
+        </app-item-done>
       </ng-container>
     </ng-container>
   </div>

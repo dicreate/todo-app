@@ -1,7 +1,19 @@
-<h2>{{ todoGroup.title }}</h2>
+<div class="mt-10 w-4/12 my-12 mx-auto">
+  <div class="text-center mb-5">
+    <h2 class="font-bold">{{ todoGroup.title }}</h2>
+    <div class="w-full h-0.5 bg-gray-400"></div>
+  </div>
 
-<ng-container *ngSwitch="todoGroup.items">
-  <app-item-not-started [ngSwitch]="'not_started'"></app-item-not-started>
-  <app-item-in-progress [ngSwitch]="'in_progress'"></app-item-in-progress>
-  <app-item-done [ngSwitch]="'done'"></app-item-done>
-</ng-container>
+  <div class="flex flex-col gap-4 justify-center items-center">
+    <ng-container *ngFor="let item of todoGroup.items">
+      <ng-container [ngSwitch]="item.status">
+        <app-item-not-started [todoItem]="item" *ngSwitchCase="'not_started'"></app-item-not-started>
+        <app-item-in-progress [todoItem]="item" *ngSwitchCase="'in_progress'"></app-item-in-progress>
+        <app-item-done [todoItem]="item" *ngSwitchCase="'done'"></app-item-done>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+
+

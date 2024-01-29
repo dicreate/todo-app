@@ -1,0 +1,7 @@
+.todo {
+  @apply flex w-96 h-16 justify-center items-center bg-slate-300 rounded-2xl shadow-xl;
+}
+
+.todo-title {
+  @apply text-base text-slate-800 font-semibold;
+}

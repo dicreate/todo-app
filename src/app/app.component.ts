@@ -15,13 +15,24 @@ export class AppComponent {
 
   constructor() {
     this.todoGroups = [{
-      title: 'первый',
+      title: 'Todo Group',
       items: [{
-        title: 'Сделать ToDo',
+        title: 'В Процессе разработки TODO',
         description: 'Делаем ToDo',
         status: ToDoStatus.IN_PROGRESS
       },
+      {
+        title: 'Ещё не делаем ToDO',
+        description: 'Делаем ToDo',
+        status: ToDoStatus.NOT_STARTED
+      },
+      {
+        title: 'Сделали TODO',
+        description: 'Делаем ToDo',
+        status: ToDoStatus.DONE
+      },
     ]
-    }]
+    },
+  ]
   }
 }

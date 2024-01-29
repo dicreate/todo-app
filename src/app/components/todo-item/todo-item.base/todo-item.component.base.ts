@@ -1,5 +1,5 @@
 import { Directive, Input } from '@angular/core';
-import { TodoItem } from '../../models/todo-group';
+import { TodoItem } from '../../../models/todo-group';
 
 @Directive({})
 

@@ -1,4 +1,4 @@
-<div class="mt-10 w-5/12 my-12 mx-auto">
+<div class="mt-10 w-5/12 my-12 mx-auto rounded-xl border-slate-200 border-2 p-10 shadow-2xl">
   <div class="text-center mb-5 flex flex-col justify-center items-center gap-4">
       <div class="flex gap-4 justify-center items-center">
         @if(isShowTitle) {
@@ -11,7 +11,7 @@
           </button>
         } @else {
           <input
-            class="outline-none text-lg font-medium py-2 px-5 border-b-zinc-500 border-b-2"
+            class="input"
             type="text"
             [(ngModel)]="groupTitle"
             (blur)="onEnterValue()"
@@ -56,6 +56,13 @@
       </ng-container>
     }
     <!-- </ng-container> -->
+    <input
+      type="text"
+      class="input"
+      placeholder="Название тудушки..."
+      #newTodo
+      (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
+    >
   </div>
 </div>
 

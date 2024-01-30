@@ -6,3 +6,7 @@
 .button {
   @apply block bg-gray-300 outline-none rounded-2xl transition-all ease-in-out delay-300 hover:scale-105 active:scale-110 text-2xl font-normal p-2;
 }
+
+.input {
+  @apply outline-none text-lg font-medium py-2 px-5 border-b-zinc-500 border-b-2 bg-transparent;
+}

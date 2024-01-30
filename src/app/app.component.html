@@ -11,6 +11,7 @@
     <app-todo-group
       [index]="i"
       [todoGroup]="group"
+      (changeTitleEvent)="handleChangeTitle($event)"
       *ngFor="let group of todoGroups;
       let i = index"
       ></app-todo-group>

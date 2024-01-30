@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoGroup } from '../../models/todo-group';
 import { ItemDoneComponent } from '../todo-item/item-done/item-done.component';
@@ -14,14 +14,28 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './todo-group.component.css'
 })
 export class TodoGroupComponent implements OnInit{
+  public isShowTitle = true;
+  public groupTitle?:string;
+
+  @Input() todoGroup!: TodoGroup;
+  @Input() index!: number;
+
+  @Output() changeTitleEvent: EventEmitter<{value: string, index: number}> = new EventEmitter<{value: string, index: number}>()
   ngOnInit(): void {
+    this.groupTitle = this.todoGroup.title;
+
     if (this.todoGroup.title ==='') {
       this.isShowTitle = false;
     }
   }
 
-  @Input() todoGroup!: TodoGroup;
-  @Input() index!: number;
+  public onEnterValue():void {
+    this.isShowTitle = true;
 
-  public isShowTitle = true;
+    this.changeTitleEvent.emit({
+      value: this.groupTitle!,
+      index: this.index
+    })
+  }
+
 }

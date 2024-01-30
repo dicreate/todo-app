@@ -4,7 +4,7 @@
       @if(isShowTitle) {
         <h2 class="font-bold text-2xl leading-10">{{ todoGroup.title }}</h2>
         <button
-        (click)="isShowTitle = !isShowTitle"
+        (click)="isShowTitle = false"
         class="bg-gray-300 outline-none rounded-2xl transition-all ease-in-out delay-300 hover:scale-105 active:scale-110 text-lg font-normal p-2"
         >
           Ред.
@@ -13,9 +13,9 @@
         <input
           class="outline-none text-lg font-medium py-2 px-5 border-b-zinc-500 border-b-2"
           type="text"
-          [(ngModel)]="todoGroup.title"
-          (blur)="isShowTitle = !isShowTitle"
-          (keyup.enter)="isShowTitle = !isShowTitle"
+          [(ngModel)]="groupTitle"
+          (blur)="onEnterValue()"
+          (keyup.enter)="onEnterValue()"
           placeholder="Введите название группы ..."
         >
       }

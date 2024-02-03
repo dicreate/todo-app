@@ -26,6 +26,8 @@ export class TodoGroupComponent implements OnInit{
 
   @Output() addNewItem = new EventEmitter<{item: TodoItem, index: number}>();
 
+  @Output() changeDescription = new EventEmitter<{description: string, indexGroup: number, indexItem: number}>();
+
   ngOnInit(): void {
     this.groupTitle = this.todoGroup.title;
 
@@ -54,5 +56,9 @@ export class TodoGroupComponent implements OnInit{
       description: '',
     },
     index: this.index})
+  }
+
+  public handleChangeDescriptionItem(value: {description: string, index: number}):void {
+    this.changeDescription.emit({description: value.description, indexGroup: this.index, indexItem: value.index})
   }
 }

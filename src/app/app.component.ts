@@ -56,4 +56,8 @@ export class AppComponent {
   public handleNewItem(value: {item: TodoItem, index: number}) {
     this.todoGroups[value.index].items?.push(value.item)
   }
+
+  public handleChangeDescription(value: {description: string, indexGroup: number, indexItem: number}): void {
+    this.todoGroups[value.indexGroup].items[value.indexItem].description = value.description
+  }
 }

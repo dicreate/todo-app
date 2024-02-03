@@ -38,6 +38,7 @@
         <app-item-not-started
           [todoItem]="item"
           *ngSwitchCase="'not_started'"
+          (eventChangeDescription)="handleChangeDescriptionItem($event)"
           [index]="i"
         >
         </app-item-not-started>

@@ -1,9 +1,29 @@
 .todo {
-  @apply flex w-96 h-16 gap-3 items-center bg-slate-300 rounded-2xl shadow-xl;
+  @apply flex flex-col w-96 min-h-14 h-fit items-start justify-center bg-slate-300 rounded-2xl shadow-xl gap-1 relative;
+}
+
+.todo-header {
+  @apply flex items-center gap-2 pt-2 pb-2;
+}
+
+.todo-description {
+  @apply ml-4 pb-2;
+}
+
+.todo-arrow {
+  @apply absolute top-3 right-4 cursor-pointer text-2xl font-semibold -rotate-90 transition-transform ease-out delay-75;
+}
+
+.todo-hide {
+  @apply rotate-90;
 }
 
 .todo-title {
   @apply text-base text-slate-800 font-semibold;
+}
+
+.textarea {
+  @apply border-b border-b-zinc-500 bg-transparent outline-none resize-none;
 }
 
 .img {

@@ -19,7 +19,7 @@ export class TodoItemBaseComponent implements OnInit{
 
   public TodoStatus = ToDoStatus
 
-  public isShowDescription = true;
+  public isShowDescription = false;
 
   public description?: string;
 

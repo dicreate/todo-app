@@ -40,6 +40,9 @@
           *ngSwitchCase="'not_started'"
           (eventChangeDescription)="handleChangeDescriptionItem($event)"
           [index]="i"
+          (changeStatus)="handleChangeStatus($event)"
+          (deleteItem)="handleDeleteItem($event)"
+
         >
         </app-item-not-started>
         <app-item-in-progress
@@ -47,12 +50,15 @@
           *ngSwitchCase="'in_progress'"
           [index]="i"
           (changeStatus)="handleChangeStatus($event)"
+          (deleteItem)="handleDeleteItem($event)"
         >
         </app-item-in-progress>
         <app-item-done
           [todoItem]="item"
           *ngSwitchCase="'done'"
           [index]="i"
+          (changeStatus)="handleChangeStatus($event)"
+          (deleteItem)="handleDeleteItem($event)"
         >
         </app-item-done>
       </ng-container>

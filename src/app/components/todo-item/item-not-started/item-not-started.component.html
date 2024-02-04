@@ -10,7 +10,7 @@
       <textarea class="textarea" [(ngModel)] = "description" cols="30" rows="10"></textarea>
       <div class="btn-group">
         <button class="button" (click)="emitChangeStatus(TodoStatus.IN_PROGRESS)">В работе</button>
-        <button class="button">Удалить</button>
+        <button class="button" (click)="emitDeleteItem()">Удалить</button>
       </div>
     </div>
   }

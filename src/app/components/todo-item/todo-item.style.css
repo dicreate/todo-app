@@ -1,5 +1,5 @@
 .todo {
-  @apply flex flex-col w-96 min-h-14 h-fit items-start justify-center bg-slate-300 rounded-2xl shadow-xl gap-1 relative;
+  @apply flex flex-col w-96 min-h-14 h-fit items-start justify-center bg-slate-200 rounded-2xl shadow-xl gap-1 relative;
 }
 
 .todo-header {
@@ -28,4 +28,8 @@
 
 .img {
   @apply ml-3;
+}
+
+.btn-group {
+  @apply flex gap-2;
 }

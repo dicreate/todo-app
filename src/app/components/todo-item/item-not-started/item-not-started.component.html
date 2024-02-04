@@ -8,10 +8,9 @@
     <div class="todo-description">
       <!-- <span>{{todoItem.description}}</span> -->
       <textarea class="textarea" [(ngModel)] = "description" cols="30" rows="10"></textarea>
-      <div>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
+      <div class="btn-group">
+        <button class="button" (click)="emitChangeStatus(TodoStatus.IN_PROGRESS)">В работе</button>
+        <button class="button">Удалить</button>
       </div>
     </div>
   }

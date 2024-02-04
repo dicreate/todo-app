@@ -60,4 +60,8 @@ export class AppComponent {
   public handleChangeDescription(value: {description: string, indexGroup: number, indexItem: number}): void {
     this.todoGroups[value.indexGroup].items[value.indexItem].description = value.description
   }
+
+  public handleChangeStatus(value: {status: ToDoStatus, indexItem: number, groupIndex: number}):void {
+    this.todoGroups[value.groupIndex].items[value.indexItem].status = value.status
+  }
 }

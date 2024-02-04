@@ -46,6 +46,7 @@
           [todoItem]="item"
           *ngSwitchCase="'in_progress'"
           [index]="i"
+          (changeStatus)="handleChangeStatus($event)"
         >
         </app-item-in-progress>
         <app-item-done

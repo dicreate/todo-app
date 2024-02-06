@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TodoGroupComponent } from './components/todo-group/todo-group.component';
@@ -10,30 +10,17 @@ import { ToDoStatus, TodoGroup, TodoItem } from './models/todo-group';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  public todoGroups: TodoGroup[];
+export class AppComponent implements OnInit {
+  public todoGroups: TodoGroup[] = [];
 
-  constructor() {
-    this.todoGroups = [{
-      title: 'Todo Group',
-      items: [{
-        title: 'В Процессе разработки TODO',
-        description: 'Делаем ToDo',
-        status: ToDoStatus.IN_PROGRESS
-      },
-      {
-        title: 'Ещё не делаем ToDO',
-        description: 'Делаем ToDo',
-        status: ToDoStatus.NOT_STARTED
-      },
-      {
-        title: 'Сделали TODO',
-        description: 'Делаем ToDo',
-        status: ToDoStatus.DONE
-      },
-    ]
-    },
-  ]
+  ngOnInit(): void {
+    const storedGroups = localStorage.getItem('todoGroups');
+    if (storedGroups) {
+      this.todoGroups = JSON.parse(storedGroups);
+    }
+  }
+  saveGroupsToLocalStorage(): void {
+    localStorage.setItem('todoGroups', JSON.stringify(this.todoGroups));
   }
 
   public addGroup():void {
@@ -41,31 +28,37 @@ export class AppComponent {
       title: '',
       items: []
     }
-
     this.todoGroups.push(tempGroup)
+    this.saveGroupsToLocalStorage();
   }
 
   public handleChangeTitle(value: {value: string, index: number}) :void {
     this.todoGroups[value.index].title = value.value;
+    this.saveGroupsToLocalStorage();
   }
 
   public handleDeleteGroup(value: number) :void {
     this.todoGroups.splice(value, 1);
+    this.saveGroupsToLocalStorage();
   }
 
   public handleNewItem(value: {item: TodoItem, index: number}) {
     this.todoGroups[value.index].items?.push(value.item)
+    this.saveGroupsToLocalStorage();
   }
 
   public handleChangeDescription(value: {description: string, indexGroup: number, indexItem: number}): void {
     this.todoGroups[value.indexGroup].items[value.indexItem].description = value.description
+    this.saveGroupsToLocalStorage();
   }
 
   public handleChangeStatus(value: {status: ToDoStatus, indexItem: number, groupIndex: number}):void {
     this.todoGroups[value.groupIndex].items[value.indexItem].status = value.status
+    this.saveGroupsToLocalStorage();
   }
 
   public handleDeleteItem(value: {indexItem: number, indexGroup: number}):void {
     this.todoGroups[value.indexGroup].items.splice(value.indexItem, 1)
+    this.saveGroupsToLocalStorage();
   }
 }

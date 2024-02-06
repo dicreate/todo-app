@@ -1,6 +1,11 @@
 <div class="todo" >
   <div class="todo-header">
+    <div
+    class="cursor-pointer"
+    (click)="emitChangeStatus(TodoStatus.NOT_STARTED)"
+  >
     <img src="../../../../assets/icons/done.svg" alt="done" class="img">
+  </div>
     <span class="todo-title">{{ todoItem.title}}</span>
     <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="isShowDescription = !isShowDescription">></span>
   </div>
@@ -9,7 +14,6 @@
       <!-- <span>{{todoItem.description}}</span> -->
       <textarea class="textarea" [(ngModel)] = "description" cols="30" rows="10"></textarea>
       <div class="btn-group">
-        <button class="button" (click)="emitChangeStatus(TodoStatus.IN_PROGRESS)">Не сделано</button>
         <button class="button" (click)="emitDeleteItem()">Удалить</button>
       </div>
     </div>

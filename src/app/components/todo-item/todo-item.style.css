@@ -3,7 +3,7 @@
 }
 
 .todo-header {
-  @apply flex items-center gap-2 pt-2 pb-2;
+  @apply flex items-center gap-2 pt-2 pb-2 w-full;
 }
 
 .todo-description {
@@ -19,7 +19,7 @@
 }
 
 .todo-title {
-  @apply text-base text-slate-800 font-semibold;
+  @apply text-base text-slate-800 font-semibold break-words w-[calc(100%_-_6rem)] block;
 }
 
 .textarea {

@@ -23,7 +23,7 @@ export class TodoItemBaseComponent implements OnInit{
 
   public description?: string;
 
-  public emitChangeDescriptin(value:string) : void {
+  public emitChangeDescription(value:string) : void {
     this.eventChangeDescription.emit({description: value, index: this.index})
   }
 

@@ -12,7 +12,15 @@
   @if (isShowDescription) {
     <div class="todo-description">
       <!-- <span>{{todoItem.description}}</span> -->
-      <textarea class="textarea" [(ngModel)] = "description" cols="30" rows="10"></textarea>
+      <textarea
+        class="textarea"
+        [(ngModel)] = "description"
+        #textarea
+        (blur)="emitChangeDescription(textarea.value)"
+        (keyup.enter)="emitChangeDescription(textarea.value)"
+        cols="30"
+        rows="10">
+      </textarea>
       <div class="btn-group">
         <button class="button" (click)="emitDeleteItem()">Удалить</button>
       </div>

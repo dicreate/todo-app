@@ -50,6 +50,7 @@
           [index]="i"
           (changeStatus)="handleChangeStatus($event)"
           (deleteItem)="handleDeleteItem($event)"
+          (eventChangeDescription)="handleChangeDescriptionItem($event)"
         >
         </app-item-in-progress>
         <app-item-done
@@ -58,6 +59,7 @@
           [index]="i"
           (changeStatus)="handleChangeStatus($event)"
           (deleteItem)="handleDeleteItem($event)"
+          (eventChangeDescription)="handleChangeDescriptionItem($event)"
         >
         </app-item-done>
       </ng-container>

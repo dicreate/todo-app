@@ -1,4 +1,4 @@
-<div class="mt-10 w-5/12 my-12 mx-auto rounded-xl border-slate-200 border-2 p-10 shadow-2xl">
+<div class="mt-10 max-w-4xl my-12 mx-auto rounded-xl border-slate-200 border-2 p-10 shadow-2xl max-sm:p-4">
   <div class="text-center mb-5 flex flex-col justify-center items-center gap-4">
       <div class="flex gap-4 justify-center items-center">
         @if(isShowTitle) {
@@ -31,7 +31,7 @@
     <div class="w-full h-0.5 bg-gray-400"></div>
   </div>
 
-  <div class="flex flex-col gap-4 justify-center items-center">
+  <div class="flex flex-col gap-4 justify-center">
    <!--  <ng-container *ngFor="let item of todoGroup.items; let i = index"> -->
     @for (item of todoGroup.items; let i = $index; track i) {
       <ng-container [ngSwitch]="item.status">
@@ -42,7 +42,6 @@
           [index]="i"
           (changeStatus)="handleChangeStatus($event)"
           (deleteItem)="handleDeleteItem($event)"
-
         >
         </app-item-not-started>
         <app-item-in-progress
@@ -67,7 +66,7 @@
     <input
       type="text"
       class="input"
-      placeholder="Название тудушки..."
+      placeholder="Введите новую задачу ..."
       #newTodo
       (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
     >

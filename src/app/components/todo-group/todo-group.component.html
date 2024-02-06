@@ -1,4 +1,4 @@
-<div class="mt-10 max-w-4xl my-12 mx-auto rounded-xl border-slate-200 border-2 p-10 shadow-2xl max-sm:p-4">
+<div class="relative mt-10 max-w-4xl my-12 mx-auto rounded-xl border-slate-200 border-2 p-10 shadow-2xl max-sm:p-4">
   <div class="text-center mb-5 flex flex-col justify-center items-center gap-4">
       <div class="flex gap-4 justify-center items-center">
         @if(isShowTitle) {
@@ -20,12 +20,12 @@
           >
         }
       </div>
-      <div>
+      <div class="absolute right-5 top-5 text-2xl w-8 h-8 flex justify-center items-center rounded-md bg-red-800 max-sm:top-3 max-sm:right-3">
         <button
-          class="button"
+          class="text-red-100"
           (click)="deleteGroupEvent()"
         >
-          Удалить
+          X
         </button>
       </div>
     <div class="w-full h-0.5 bg-gray-400"></div>

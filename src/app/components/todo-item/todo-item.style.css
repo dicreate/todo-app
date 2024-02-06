@@ -7,7 +7,7 @@
 }
 
 .todo-description {
-  @apply ml-4 pb-2;
+  @apply ml-4 pb-2 w-[calc(100%_-_6rem)];
 }
 
 .todo-arrow {
@@ -23,7 +23,7 @@
 }
 
 .textarea {
-  @apply border-b border-b-zinc-500 bg-transparent outline-none resize-none;
+  @apply border-b border-b-zinc-500 bg-transparent outline-none w-full resize-none overflow-hidden;
 }
 
 .img {

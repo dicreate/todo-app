@@ -8,5 +8,5 @@
 }
 
 .input {
-  @apply outline-none text-lg font-medium py-2 px-5 border-b-zinc-500 border-b bg-transparent;
+  @apply outline-none text-lg font-medium py-2 px-2 border-b-zinc-500 border-b bg-transparent;
 }

@@ -16,7 +16,7 @@
             [(ngModel)]="groupTitle"
             (blur)="onEnterValue()"
             (keyup.enter)="onEnterValue()"
-            placeholder="Введите название группы ..."
+            placeholder="Название группы ..."
           >
         }
       </div>
@@ -68,7 +68,7 @@
     <input
       type="text"
       class="input"
-      placeholder="Введите новую задачу ..."
+      placeholder="Новая задача ..."
       #newTodo
       (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
       (blur)="newTodo.value !== '' ? addNewTodo(newTodo.value) : null;  newTodo.value = ''"

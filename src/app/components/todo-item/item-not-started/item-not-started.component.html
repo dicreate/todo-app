@@ -18,6 +18,7 @@
         #textarea
         (blur)="emitChangeDescription(textarea.value)"
         (keyup.enter)="emitChangeDescription(textarea.value)"
+        (close)="emitChangeDescription(textarea.value)"
         (input)="autoResize()"
       >
     </textarea>

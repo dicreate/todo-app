@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .button {
-  @apply block bg-gray-300 outline-none rounded-2xl transition-all ease-in-out delay-300 hover:scale-105 active:scale-110 text-2xl font-normal p-2;
+  @apply block bg-red-700 text-red-100 outline-none rounded-3xl transition-all ease-in-out delay-300 hover:scale-105 active:scale-110 text-xl font-normal p-3;
 }
 
 .input {

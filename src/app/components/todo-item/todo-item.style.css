@@ -7,7 +7,7 @@
 }
 
 .todo-description {
-  @apply ml-4 pb-2 w-[calc(100%_-_6rem)];
+  @apply ml-4 pb-2 w-[calc(100%_-_2rem)];
 }
 
 .todo-arrow {
@@ -31,5 +31,5 @@
 }
 
 .btn-group {
-  @apply flex gap-2;
+  @apply flex justify-end gap-2;
 }

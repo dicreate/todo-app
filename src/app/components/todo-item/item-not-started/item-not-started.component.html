@@ -7,7 +7,7 @@
       <img src="../../../../assets/icons/Check.svg" alt="done" class="img">
     </div>
     <div class="todo-title">{{ todoItem.title}}</div>
-    <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="isShowDescription = !isShowDescription">></span>
+    <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="toggleDescription()">></span>
   </div>
   @if (isShowDescription) {
     <div class="todo-description">

@@ -71,6 +71,7 @@
       placeholder="Введите новую задачу ..."
       #newTodo
       (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
+      (blur)="newTodo.value !== '' ? addNewTodo(newTodo.value) : null;  newTodo.value = ''"
     >
   </div>
 </div>

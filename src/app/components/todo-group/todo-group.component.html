@@ -11,10 +11,11 @@
           </button>
         } @else {
           <input
+            #inputGroup
             class="input"
             type="text"
             [(ngModel)]="groupTitle"
-            (blur)="onEnterValue()"
+            (blur)="inputGroup.value !== '' ? onEnterValue() : null"
             (keyup.enter)="onEnterValue()"
             placeholder="Название группы ..."
           >

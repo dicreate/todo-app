@@ -7,7 +7,7 @@
     <img src="../../../../assets/icons/done.svg" alt="done" class="img">
   </div>
     <span class="todo-title">{{ todoItem.title}}</span>
-    <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="isShowDescription = !isShowDescription">></span>
+    <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="toggleDescription()">></span>
   </div>
   @if (isShowDescription) {
     <div class="todo-description">
@@ -18,8 +18,7 @@
         #textarea
         (blur)="emitChangeDescription(textarea.value)"
         (keyup.enter)="emitChangeDescription(textarea.value)"
-        cols="30"
-        rows="10"
+        (input)="autoResize()"
       >
       </textarea>
       <div class="btn-group">

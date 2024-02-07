@@ -13547,7 +13547,7 @@ var rp = (() => {
         [1, "todo"],
         [1, "todo-header"],
         [1, "cursor-pointer", 3, "click"],
-        ["src", "./assets/icons/done.svg", "alt", "done", 1, "img"],
+        ["src", "./docs/assets/icons/done.svg", "alt", "done", 1, "img"],
         [1, "todo-title"],
         [1, "todo-arrow", 3, "ngClass", "click"],
         ["class", "todo-description"],

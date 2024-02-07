@@ -1,12 +1,21 @@
-import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, OnInit, Output, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ToDoStatus, TodoItem } from '../../../models/todo-group';
 
 @Directive({})
 
-export class TodoItemBaseComponent implements OnInit{
+export class TodoItemBaseComponent implements OnInit {
   ngOnInit(): void {
     this.description = this.todoItem.description;
   }
+
+  @ViewChild('textarea') textarea!: ElementRef;
+
+  /*
+  ngAfterViewInit() {
+    if (this.textarea) {
+      this.autoResize(this.textarea.nativeElement.value);
+    }
+  } */
 
   @Input() todoItem!: TodoItem;
   @Input() index!: number;
@@ -33,5 +42,14 @@ export class TodoItemBaseComponent implements OnInit{
 
   public emitDeleteItem() : void {
     this.deleteItem.emit(this.index)
+  }
+  autoResize(): void {
+    if (!this.textarea || !this.textarea.nativeElement) {
+      return; // Выйдем, если элемент не определен
+    }
+
+    const textarea = this.textarea.nativeElement;
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
   }
 }

@@ -23,7 +23,7 @@
 }
 
 .textarea {
-  @apply border-b border-b-zinc-500 bg-transparent outline-none w-full resize-none overflow-hidden;
+  @apply border-b border-b-zinc-500 bg-transparent outline-none w-full resize-none overflow-hidden min-h-10 max-h-none;
 }
 
 .img {

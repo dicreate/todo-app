@@ -4,7 +4,7 @@
     class="cursor-pointer"
     (click)="emitChangeStatus(TodoStatus.NOT_STARTED)"
   >
-    <img src="../../../../assets/icons/done.svg" alt="done" class="img">
+    <img src="assets/icons/done.svg" alt="done" class="img">
   </div>
     <span class="todo-title">{{ todoItem.title}}</span>
     <span class="todo-arrow" [ngClass]="isShowDescription ? '' : 'todo-hide'" (click)="toggleDescription()">></span>
